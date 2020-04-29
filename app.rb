@@ -8,8 +8,8 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    session[:player1] = params[:player1]
-    session[:player2] = params[:player2]
+    session[:player1] = Player.new(params[:player1], 100)
+    session[:player2] = Player.new(params[:player2], 100)
     redirect('/play')
   end
 
