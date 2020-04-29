@@ -13,4 +13,10 @@ feature 'Player input' do
     sign_in_and_play
     expect(page).to have_content('HP: 100')
   end
+
+  scenario 'Player 1 attacks player 2' do
+    sign_in_and_play
+    click_button('submit')
+    expect(page).to have_content('Jo HP: 90')
+  end
 end

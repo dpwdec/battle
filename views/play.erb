@@ -1,3 +1,6 @@
 <h1> <%= @player_1.name %> HP: <%= @player_1.hit_points %> </h1>
 </br>
 <h1> <%= @player_2.name %> HP: <%= @player_2.hit_points %> </h1>
+<form action="/damage" method="post">
+    <input type="submit" name="submit" value="Damage" />
+</form>

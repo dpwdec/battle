@@ -14,6 +14,11 @@ class Battle < Sinatra::Base
     redirect('/play')
   end
 
+  post '/damage' do
+    session[:player2].hit_points -= 10
+    redirect('/play')
+  end
+
   get '/play' do
     @player_1 = session[:player1]
     @player_2 = session[:player2]
