@@ -1,10 +1,16 @@
-feature 'Name input' do
-  scenario 'Player names and hit points are displayed' do
-    visit('/')
-    fill_in('player1', with: 'Dec')
-    fill_in('player2', with: 'Jo')
-    click_button('submit')
-    expect(page).to have_content('Dec: 100')
-    expect(page).to have_content('Jo: 100')
+feature 'Player input' do
+  scenario 'Player 1 name is displayed' do
+    sign_in_and_play
+    expect(page).to have_content('Dec')
+  end
+
+  scenario 'Player 2 name is displayed' do
+    sign_in_and_play
+    expect(page).to have_content('Jo')
+  end
+
+  scenario 'Player hit points are displayed' do
+    sign_in_and_play
+    expect(page).to have_content('HP: 100')
   end
 end
